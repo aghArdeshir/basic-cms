@@ -1,6 +1,6 @@
 import EventEmitter from "events";
-import { ERRORS } from "../ERRORS";
-import { EVENT } from "../EVENT";
+import { ERRORS } from "./ERRORS";
+import { EVENT } from "./EVENT";
 import { currentEnvironment } from "./EnvironmentDetector";
 
 const listenersMap = new Map<EventListener, EventListener>();

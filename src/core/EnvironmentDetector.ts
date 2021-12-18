@@ -1,4 +1,4 @@
-import { ERRORS } from "../ERRORS";
+import { ERRORS } from "./ERRORS";
 
 //eslint-disable-next-line no-new-func
 const isBrowser = new Function(

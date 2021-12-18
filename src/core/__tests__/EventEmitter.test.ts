@@ -1,5 +1,5 @@
-import { ERRORS } from "../../ERRORS";
-import { EVENT } from "../../EVENT";
+import { ERRORS } from "../ERRORS";
+import { EVENT } from "../EVENT";
 import { core } from "../EventEmitter";
 
 test("my event listener gets called", () => {
