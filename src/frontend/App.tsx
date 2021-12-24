@@ -1,8 +1,10 @@
 import React from "react";
-import './index.css';
+import KitchenSink from "./dev/KitchenSink";
+
+import "./index.css";
 
 function App() {
-  return <div></div>;
+  return <KitchenSink />;
 }
 
 export default App;
