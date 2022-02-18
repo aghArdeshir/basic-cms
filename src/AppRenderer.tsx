@@ -1,12 +1,12 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
-import App from "./frontend/App";
+import KitchenSink from "./frontend/dev/KitchenSink";
 import reportWebVitals from "./frontend/reportWebVitals";
 
 export function renderApp(container: HTMLElement) {
   ReactDOM.render(
     <StrictMode>
-      <App />
+      <KitchenSink />
     </StrictMode>,
     container
   );
