@@ -1,5 +1,5 @@
-import { fireEvent, render, screen } from "@testing-library/react";
 import { ComponentProps } from "react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { EVENT } from "../../../../core/EVENT";
 import { core } from "../../../../core/EventEmitter";
 import Item from "../Item";

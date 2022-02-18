@@ -1,4 +1,3 @@
-import React from "react";
 import KitchenSink from "./dev/KitchenSink";
 
 import "./index.css";

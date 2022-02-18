@@ -1,13 +1,13 @@
-import React from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import App from "./frontend/App";
 import reportWebVitals from "./frontend/reportWebVitals";
 
 export function renderApp(container: HTMLElement) {
   ReactDOM.render(
-    <React.StrictMode>
+    <StrictMode>
       <App />
-    </React.StrictMode>,
+    </StrictMode>,
     container
   );
 }
