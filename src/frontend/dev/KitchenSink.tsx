@@ -18,14 +18,14 @@ export default function KitchenSink() {
   return (
     <>
       {thingsToDemo.map(([name, thing]) => (
-        <>
+        <React.Fragment key={name}>
           {name}
           <br />
           {thing}
           <hr />
           <hr />
           <hr />
-        </>
+        </React.Fragment>
       ))}
     </>
   );

@@ -12,11 +12,7 @@ class EventEmitterForBrowser extends EventTarget {
     }
 
     function customListener(e: Event | CustomEvent) {
-      if (e instanceof CustomEvent) {
-        listener(e.detail);
-      } else {
-        throw ERRORS.EVENT_IS_NOT_CUSTOM_EVENT;
-      }
+      listener((e as CustomEvent).detail);
     }
 
     listenersMap.set(listener, customListener);
