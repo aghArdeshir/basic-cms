@@ -3,10 +3,14 @@ import { ERRORS } from "./ERRORS";
 import { EVENT } from "./EVENT";
 import { currentEnvironment } from "./EnvironmentDetector";
 
-const listenersMap = new Map<EventListener, EventListener>();
+type BasicCmsEventListener<T> = (data: T) => void;
+const listenersMap = new Map<
+  BasicCmsEventListener<any>,
+  BasicCmsEventListener<any>
+>();
 
 class EventEmitterForBrowser extends EventTarget {
-  on(event: EVENT, listener: EventListener) {
+  on<T>(event: EVENT, listener: BasicCmsEventListener<T>) {
     if (listenersMap.has(listener)) {
       throw ERRORS.LISTENER_ALREADY_ATTACHED;
     }
@@ -21,7 +25,7 @@ class EventEmitterForBrowser extends EventTarget {
   emit(eventName: EVENT, payload: Object | null = null) {
     this.dispatchEvent(new CustomEvent(eventName, { detail: payload }));
   }
-  off(event: EVENT, listener: EventListener) {
+  off<T>(event: EVENT, listener: BasicCmsEventListener<T>) {
     if (!listenersMap.has(listener)) {
       throw ERRORS.LISTENER_NOT_ATTACHED;
     }
@@ -35,7 +39,7 @@ class EventEmitterForBrowser extends EventTarget {
 }
 
 class EventEmitterForNode extends EventEmitter {
-  on(event: EVENT, listener: EventListener) {
+  on<T>(event: EVENT, listener: BasicCmsEventListener<T>) {
     if (listenersMap.has(listener)) {
       throw ERRORS.LISTENER_ALREADY_ATTACHED;
     }
@@ -45,7 +49,7 @@ class EventEmitterForNode extends EventEmitter {
     return this;
   }
 
-  off(event: EVENT, listener: EventListener) {
+  off<T>(event: EVENT, listener: BasicCmsEventListener<T>) {
     if (!listenersMap.has(listener)) {
       throw ERRORS.LISTENER_NOT_ATTACHED;
     }
